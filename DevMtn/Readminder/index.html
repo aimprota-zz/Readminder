@@ -1,0 +1,20 @@
+<html ng-app='readminderApp'>
+	<head>
+		<script src="/angular.min.js"></script>
+		<script src="/app.js"></script>
+		<script src="/main.js"></script>
+		<link rel="stylesheet" href="/main.css">
+	</head>
+	<body ng-controller='MainCtrl'>
+		<div class='container'>
+  			<div> Here are your links!
+			    <ul>
+			      <li ng-repeat="link in link Data">
+			        <a href="{{link.url}}">{{link.title}}</a>
+			      </li>
+			    </ul>
+    			<button ng-click="addLinkClick()">Add Link</button>
+  			</div>
+		</div>
+	</body>
+</html>

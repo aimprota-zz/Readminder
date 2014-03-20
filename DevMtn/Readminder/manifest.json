@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Readminder",
+  "description": "Reminds you of all those articles and blogs you meant to read.",
+  "version": "0.1",
+
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  }
+}
