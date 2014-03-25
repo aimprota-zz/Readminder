@@ -9,7 +9,7 @@
 		<div class='container'>
   			<div> Here are your links!
 			    <ul>
-			      <li ng-repeat="link in link Data">
+			      <li ng-repeat="link in linkData track by $id($index)">
 			        <a href="{{link.url}}">{{link.title}}</a>
 			      </li>
 			    </ul>

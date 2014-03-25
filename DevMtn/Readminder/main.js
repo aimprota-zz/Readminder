@@ -12,16 +12,18 @@ angular.module('readminderApp')
     	console.log("Active tab info (url, title): ", tabInfo.url, tabInfo.title);
   	});
 
+	var linkData = []; 
+	$scope.linkData = linkData;
 		//make linkData equal to stored data so that the data is 
 		//accessible by the ng-repeat
 	var getCallback = function(data) {
 				console.log('stored array', data.value);
 				if (data.value) {
-					$scope.linkData = [];
 					for (var i = 0; i < data.value.length; i++) {
-						$scope.linkData[i] = data.value[i];
-					}
-					console.log('linkData after get:', $scope.linkData);
+						var newData = 
+						linkData[i] = data.value[i];
+					};
+					console.log('After get:', '$scope.linkData:', $scope.linkData);
 				}
 			};
 
@@ -30,17 +32,18 @@ angular.module('readminderApp')
 		    };
 
 	get(getCallback);
+	console.log('$scope.linkData at the end', $scope.linkData);
 		
-	$scope.addLinkClick = function() {
-			$scope.linkData[$scope.linkData.length] = tabInfo;
-				// for (i=0; i)
-			chrome.storage.sync.set({'value': $scope.linkData}, function (){
-				console.log('link saved');
-			});
-			// chrome.storage.sync.get('value', function(data){
-			// 	console.log('stored array', data.value);
-			// 	$scope.linkData = data.value;
-			// 	console.log('linkData:', $scope.linkData);
-			// });
-		};
+	// $scope.addLinkClick = function() {
+	// 		$scope.linkData[$scope.linkData.length] = tabInfo;
+	// 			// for (i=0; i)
+	// 		chrome.storage.sync.set({'value': $scope.linkData}, function (){
+	// 			console.log('link saved');
+	// 		});
+	// 		// chrome.storage.sync.get('value', function(data){
+	// 		// 	console.log('stored array', data.value);
+	// 		// 	$scope.linkData = data.value;
+	// 		// 	console.log('linkData:', $scope.linkData);
+	// 		// });
+	// 	};
 });
